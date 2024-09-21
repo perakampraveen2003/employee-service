@@ -49,7 +49,6 @@ public class PublishService {
 		String message;
 		try {
 			message = mapper.writeValueAsString(employee);
-			System.out.println(message);
 			PublishRequest publishRequest = new PublishRequest(topicArn, message);
 			PublishResult publishResult = snsClient.publish(publishRequest);
 			System.out.println("MessageId: " + publishResult.getMessageId());
